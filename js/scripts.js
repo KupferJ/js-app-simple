@@ -1,5 +1,5 @@
 
-// pokemonList wrappet into an IIFE
+// pokemonList wrapped into an IIFE
 let pokemonRepository = (function () {
   let pokemonList= [
     {name:'Bulbasaur', height:2.04, type:['grass', 'poison'], weaknesses:['fire', 'psychich', 'flying', 'ice']},
@@ -10,11 +10,22 @@ let pokemonRepository = (function () {
   ];
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
+    // validation to check if the parameter is an object
+      if(typeof pokemon === 'object'){
+    // validation to check whether all parameters are equal to the expected keys    
+      if (Object.keys(pokemon)[0] === 'name' &&
+          Object.keys(pokemon)[1] === 'height' &&
+          Object.keys(pokemon)[2] === 'type' &&
+          Object.keys(pokemon)[3] === 'weaknesses') {
+        pokemonList.push(pokemon);
+      }
+    }
+  }    
+
   function getAll() {
     return pokemonList;
   }
+
   return {
     add: add,
     getAll: getAll,
@@ -32,7 +43,7 @@ pokemonRepository.getAll().forEach (function(property) {
   }
 });
 
-// testing the getAll and add functions (because it is declared below, the added 'jigglypuff' is updated in the console, but not the document)
+// testing the getAll and add functions
 console.log(pokemonRepository.getAll());
 console.log(pokemonRepository.add({name:'Jigglypuff', height:1.08, type:['normal', 'fairy'], weaknesses:['steel', 'poison']}));
 console.log(pokemonRepository.getAll());
