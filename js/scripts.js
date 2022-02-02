@@ -10,13 +10,17 @@ let pokemonList= [
 ]
 
 
-/* simple way of writing the names in browser but harder to put in the brackets and a line break
-document.write(pokemonList[i].name + ('height: ') + pokemonList[i].height) 
+pokemonList.forEach (function(property) {
+  if (property.height > 10) {
+    document.write(`${property.name} [height: ${property.height}] - Wow, that's big!! <br> `)
+  } else if(property.height < .1) {
+    document.write(`${property.name} [height: ${property.height}] - That's tiny! <br> `)
+  } else {
+    document.write(`${property.name} [height: ${property.height}]<br> `)
+  }
+});
 
-so I used template literals as a way of making it easier
-document.write(`${pokemonList[i].name} [height: ${pokemonList[i].height}]<br> `)
-*/
-
+/*
 for(let i=0; i<pokemonList.length; i++){
   // adds messages for cases in which a pokemon is extraordinarily big or small
   if(pokemonList[i].height > 10) {
@@ -26,4 +30,4 @@ for(let i=0; i<pokemonList.length; i++){
   } else {
     document.write(`${pokemonList[i].name} [height: ${pokemonList[i].height}]<br> `)
   }
-}
+}*/
