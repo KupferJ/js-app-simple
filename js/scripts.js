@@ -26,24 +26,41 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  //created button for each Item of the pokemon list
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+   // Event Listener function to show details of the pokemon list
+    button.addEventListener('click', function() {
+      showDetails(pokemon);
+    })
+    button.innerText = pokemon.name;
+    button.classList.add('btn-class');
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
+    }
+
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
   };
 })();
 
-// forEach loop that prints the list
-pokemonRepository.getAll().forEach (function(property) {
-  if (property.height > 10) {
-    document.write(`${property.name} [height: ${property.height}] - Wow, that's big!! <br> `)
-  } else if(property.height < .1) {
-    document.write(`${property.name} [height: ${property.height}] - That's tiny! <br> `)
-  } else {
-    document.write(`${property.name} [height: ${property.height}]<br> `)
-  }
-});
+//function to display details from the pokemon list in console, called with the event listener
+function showDetails(pokemon) {
+  console.log(pokemon);
+}
+
 
 // testing the getAll and add functions
 console.log(pokemonRepository.getAll());
 console.log(pokemonRepository.add({name:'Jigglypuff', height:1.08, type:['normal', 'fairy'], weaknesses:['steel', 'poison']}));
 console.log(pokemonRepository.getAll());
+
+
+
+pokemonRepository.getAll().forEach (function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});

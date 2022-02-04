@@ -1,0 +1,19 @@
+
+button {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background-color: lightgrey;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.22);
+  border: 1px grey solid;
+}
+
+button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
