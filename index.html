@@ -15,10 +15,10 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark font-weight-bold">
   <a class="navbar-brand" href="#">
     <img src="img/poke-logo.png" width="50px" height="50px" class="d-inline-block align-top" alt="logo" aria-label="pikachu logo">
-    Pokédex
+    <span style="font-size: 26px;">Pokédex</span>
   </a>
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" id="pokemon-search" type="search" placeholder="Search" aria-label="search bar">
@@ -34,7 +34,7 @@
   <div class="modal fade" id="poke-Modal" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header border-0">
           <h5 class="modal-title" id="pokemonModalLabel"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -45,13 +45,23 @@
     </div>
   </div>
   <!-- Pokemon List -->
-  <div class="list-container">
-      <ul class="pokemon-list col"></ul>
+  <div class="page-container">
+      <ul class="pokemon-list list-group-horizontal"></ul>
   </div>
 </main>
 
-<footer class="page-footer">
-  <div class="footer-item">Placeholder</div>
+
+<footer class="bg-light text-center text-black font-weight-bold">
+  <div class="footer-findme">Find me on</div>
+  <a href="https://www.facebook.com/profile.php?id=100013842121897" class="text-muted" target="_blank">
+    <img class="footer-img" src="img/facebook-icon.svg" alt="Facebook">
+  </a>
+  <a href="https://linkedin.com"  class="text-muted" target="_blank">
+    <img class="footer-img" src="img/linkedin-icon.svg" alt="LinkedIn">
+  </a>
+  <a href="https://github.com/KupferJ"  class="text-muted" target="_blank" >
+    <img class="footer-img" src="img/github-icon.svg" alt="GitHub">
+  </a>
 </footer>
 
 
