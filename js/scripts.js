@@ -2,7 +2,7 @@
 let pokemonRepository = (function() {
   // Creatie an array for the pokemon
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
   // add pokemon to  pokemonList
   function add(pokemon) {
@@ -83,6 +83,17 @@ let pokemonRepository = (function() {
 
     // add event listener
     buttonEventListener(listButton,pokemon);
+
+    //adds pokemon image to the button
+    loadDetails(pokemon).then(function () {
+      let pokeImgDiv = document.createElement('div');
+      let pokeImage = document.createElement('img');
+      pokeImage.src = pokemon.imageUrl;
+      pokeImage.classList.add('pokemon-image');
+
+      pokeImgDiv.appendChild(pokeImage);
+      listButton.appendChild(pokeImgDiv);
+    });
   }
 
   // event listener to show detaily
