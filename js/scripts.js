@@ -112,7 +112,6 @@ let pokemonRepository = (function() {
 
   // function to show modal with pokemon details
   function showModal(pokemon) {
-    let modalHeader = $('.modal-header');
     let modalTitle = $('.modal-title');
     let modalBody = $('.modal-body');
 
@@ -144,9 +143,9 @@ let pokemonRepository = (function() {
 
   //adding a jQuery function to search for the individual pokemon via their name
   $(document).ready(function(){
-    $("#pokemon-search").on("keyup", function() {
+    $('#pokemon-search').on('keyup', function() {
       let value = $(this).val().toLowerCase();
-      $(".search-pkm-btn").filter(function() {
+      $('.search-pkm-btn').filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
       });
     });
