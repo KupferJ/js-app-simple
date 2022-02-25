@@ -87,7 +87,3 @@ main{
   width: 30px;
   padding-bottom: 5px;
 }
-
-.footer-img:hover {
-  transform: scale(1.2);
-}
